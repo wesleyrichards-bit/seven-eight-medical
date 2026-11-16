@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mutual NDA — Seven Eight Medical</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#0B1416; --paper:#F5F6F4; --paper2:#E9EEEC; --teal:#2BB3A3; --teal-ink:#137066; --soft:#56625F; --line:#D5DEDB; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Inter, -apple-system, "Segoe UI", Arial, sans-serif; color: var(--ink); background: var(--paper); -webkit-font-smoothing: antialiased; }
+  a { color: var(--teal-ink); }
+  nav { background: var(--ink); color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; }
+  .logo { font-weight: 600; letter-spacing: .32em; font-size: 13px; text-transform: uppercase; display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
+  .logo-mark { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--teal); position: relative; }
+  .logo-mark::after { content: ""; position: absolute; inset: 5px; border-radius: 50%; background: var(--teal); }
+  nav a.back { color: #A9C1BD; font-size: 14px; text-decoration: none; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 64px 24px 96px; }
+  .eyebrow { font-size: 13px; letter-spacing: .28em; text-transform: uppercase; color: var(--teal-ink); font-weight: 600; }
+  h1 { font-size: clamp(36px, 5vw, 60px); letter-spacing: -0.04em; line-height: 1.04; margin: 12px 0 16px; }
+  .lede { font-size: 19px; color: var(--soft); line-height: 1.55; max-width: 760px; }
+  .steps { display: flex; gap: 12px; flex-wrap: wrap; margin: 28px 0 8px; }
+  .chip { background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px; font-size: 14px; color: var(--soft); }
+  .chip b { color: var(--teal-ink); }
+  .grid { display: grid; grid-template-columns: 420px 1fr; gap: 40px; margin-top: 40px; align-items: start; }
+  .panel { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 28px; position: sticky; top: 24px; }
+  .panel h2 { font-size: 22px; letter-spacing: -0.02em; margin-bottom: 4px; }
+  .panel p.hint { font-size: 14px; color: var(--soft); margin-bottom: 18px; line-height: 1.5; }
+  label { display: block; font-size: 13px; font-weight: 600; margin: 14px 0 6px; }
+  input[type=text], input[type=email], input[type=date] { width: 100%; padding: 11px 12px; border: 1px solid var(--line); border-radius: 10px; font: inherit; font-size: 15px; background: var(--paper); }
+  input:focus { outline: 2px solid var(--teal); outline-offset: 1px; background: #fff; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .check { display: flex; gap: 10px; align-items: flex-start; margin-top: 18px; font-size: 14px; line-height: 1.45; color: var(--soft); }
+  .check input { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--teal-ink); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 14px 20px; border-radius: 999px; font: inherit; font-size: 15px; font-weight: 600; border: 0; cursor: pointer; margin-top: 14px; text-decoration: none; }
+  .btn-primary { background: var(--ink); color: #fff; }
+  .btn-primary:disabled { background: #9AA6A4; cursor: not-allowed; }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .msg { font-size: 13px; color: #A3550F; margin-top: 10px; min-height: 18px; }
+  .small { font-size: 12px; color: var(--soft); margin-top: 14px; line-height: 1.5; }
+
+  /* Agreement */
+  .doc { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 56px 64px; font-size: 15px; line-height: 1.65; color: #1E2A28; }
+  .doc h2 { font-size: 30px; letter-spacing: -0.03em; margin-bottom: 18px; color: var(--ink); }
+  .doc h3 { font-size: 17px; margin: 26px 0 8px; color: var(--ink); }
+  .doc p { margin: 0 0 10px; }
+  .doc ol { margin: 0 0 10px 22px; }
+  .doc li { margin-bottom: 6px; }
+  .fill { background: #E5F4E4; border-bottom: 1.5px solid var(--teal-ink); padding: 0 4px; border-radius: 3px; font-weight: 600; }
+  .fill.empty { background: #F9EEDA; border-bottom-color: #C98A2B; color: #8A5A12; font-weight: 500; }
+  .sig { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 24px; }
+  .sigbox { border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  .sigbox h4 { font-size: 14px; margin-bottom: 12px; }
+  .sigline { border-bottom: 1px solid #1E2A28; min-height: 44px; font-family: Caveat, cursive; font-size: 30px; line-height: 44px; color: #14306B; }
+  .sigmeta { font-size: 13px; color: var(--soft); margin-top: 8px; line-height: 1.6; }
+  .stamp { font-size: 12px; color: var(--soft); margin-top: 18px; border-top: 1px dashed var(--line); padding-top: 12px; }
+
+  @media (max-width: 960px) { .grid { grid-template-columns: 1fr; } .panel { position: static; } .doc { padding: 32px 24px; } .sig { grid-template-columns: 1fr; } }
+
+  @media print {
+    @page { size: A4; margin: 18mm 16mm; }
+    body { background: #fff; }
+    nav, .intro, .panel, .steps { display: none !important; }
+    .wrap { padding: 0; max-width: none; }
+    .grid { display: block; margin: 0; }
+    .doc { border: 0; padding: 0; font-size: 11pt; line-height: 1.5; }
+    .fill { background: none; border-bottom: 1px solid #000; }
+    .fill.empty { background: none; color: #000; }
+    .doc h3 { break-after: avoid; }
+    .sig { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo"><span class="logo-mark"></span>Seven Eight Medical</a>
+  <a href="index.html#contact" class="back">← Back to site</a>
+</nav>
+
+<div class="wrap">
+  <div class="intro">
+    <p class="eyebrow">Mutual non-disclosure agreement</p>
+    <h1>Sign our NDA online.</h1>
+    <p class="lede">Before we share designs, specifications or pilot plans, we ask partners to sign a mutual NDA. Fill in your details, sign by typing your name, then save the completed agreement as a PDF and email it to us. We countersign and return a copy.</p>
+    <div class="steps">
+      <span class="chip"><b>1</b> Fill in your details</span>
+      <span class="chip"><b>2</b> Type your name to sign</span>
+      <span class="chip"><b>3</b> Save as PDF</span>
+      <span class="chip"><b>4</b> Email to hello@seveneightmedical.com</span>
+    </div>
+  </div>
+
+  <div class="grid">
+    <form class="panel" id="f" autocomplete="on" onsubmit="return false;">
+      <h2>Your details</h2>
+      <p class="hint">Your entries fill the agreement as you type. Nothing is sent anywhere until you email it to us yourself.</p>
+
+      <label for="co">Company name</label>
+      <input type="text" id="co" data-k="co" autocomplete="organization" required>
+      <div class="row2">
+        <div><label for="ctry">Country of incorporation</label><input type="text" id="ctry" data-k="ctry" value="England and Wales" required></div>
+        <div><label for="num">Company number</label><input type="text" id="num" data-k="num" required></div>
+      </div>
+      <label for="addr">Registered office address</label>
+      <input type="text" id="addr" data-k="addr" autocomplete="street-address" required>
+      <label for="em">Email for notices</label>
+      <input type="email" id="em" data-k="em" autocomplete="email" required>
+      <div class="row2">
+        <div><label for="nm">Signatory name</label><input type="text" id="nm" data-k="nm" autocomplete="name" required></div>
+        <div><label for="ttl">Title</label><input type="text" id="ttl" data-k="ttl" autocomplete="organization-title" required></div>
+      </div>
+      <label for="dt">Date</label>
+      <input type="date" id="dt" data-k="dt" required>
+      <label for="sg">Signature — type your full name</label>
+      <input type="text" id="sg" data-k="sg" required>
+      <label class="check"><input type="checkbox" id="ok"> I confirm I am authorised to sign for this company and that typing my name above is my electronic signature to this agreement.</label>
+
+      <button type="button" class="btn btn-primary" id="save">Save completed NDA as PDF</button>
+      <a class="btn btn-ghost" id="mail" href="mailto:hello@seveneightmedical.com?subject=Signed%20mutual%20NDA">Email it to us</a>
+      <p class="msg" id="msg"></p>
+      <a class="btn btn-ghost" href="Seven_Eight_Medical_Mutual_NDA.pdf" download>Download blank NDA (PDF)</a>
+      <p class="small">On “Save as PDF”, choose <b>Save as PDF</b> as the printer. Then attach the file to your email. Prefer to sign on paper? Download the blank NDA, sign, and send a scan.</p>
+    </form>
+
+    <article class="doc" id="doc">
+      <h2>Mutual Non-Disclosure Agreement</h2>
+      <p><b>This Agreement is dated</b> <span class="fill" data-v="dt"></span>.</p>
+
+      <h3>Parties</h3>
+      <ol>
+        <li><b>Seven Eight Asset Limited</b>, a company incorporated in England and Wales with company number 06725808, whose registered office is at Berkstead, Winkfield Lane, Winkfield, Windsor, Berkshire SL4 4QU, trading as Seven Eight Medical (“<b>Seven Eight Medical</b>”).</li>
+        <li><span class="fill" data-v="co"></span>, a company incorporated in <span class="fill" data-v="ctry"></span> with company number <span class="fill" data-v="num"></span>, whose registered office is at <span class="fill" data-v="addr"></span> (the “<b>Counterparty</b>”).</li>
+      </ol>
+      <p>Each is a “<b>Party</b>” and together the “<b>Parties</b>”.</p>
+
+      <h3>Background</h3>
+      <p>A. Seven Eight Medical is developing audio technology for operating theatres, surgical patients and recovery settings (the “<b>Project</b>”).</p>
+      <p>B. The Parties wish to share confidential information for the purpose of evaluating a possible collaboration, investment, supply or licensing arrangement relating to the Project (the “<b>Purpose</b>”).</p>
+      <p>C. Each Party may disclose and receive Confidential Information, and agrees to protect it on the terms below.</p>
+
+      <h3>1. Confidential Information</h3>
+      <p>1.1 “<b>Confidential Information</b>” means all information disclosed by or for a Party (the “<b>Discloser</b>”) to the other (the “<b>Recipient</b>”) in connection with the Purpose, in any form, before or after the date of this Agreement. It includes product concepts, designs, drawings, specifications, prototypes, software, clinical requirements and workflow insight, research, prior-art and patent searches, business plans, pricing, supplier and customer information, and the existence and terms of the Parties’ discussions.</p>
+      <p>1.2 Information belonging to Seven Eight Medical’s founders, directors or advisers and disclosed by Seven Eight Medical is treated as Seven Eight Medical’s Confidential Information.</p>
+
+      <h3>2. Obligations</h3>
+      <p>2.1 The Recipient shall:</p>
+      <ol>
+        <li>keep the Confidential Information secret and use at least the care it uses for its own confidential information, and no less than reasonable care;</li>
+        <li>use it only for the Purpose;</li>
+        <li>disclose it only to its employees, officers and professional advisers who need to know it for the Purpose and who are bound by confidentiality duties no less strict than these (“<b>Representatives</b>”), and be responsible for their compliance;</li>
+        <li>not copy it except as reasonably needed for the Purpose;</li>
+        <li>not reverse engineer, analyse or test any prototype, sample or software supplied, except as the Discloser agrees in writing.</li>
+      </ol>
+      <p>2.2 The Recipient shall not use the Confidential Information to develop, or help any third party develop, a product, service or patent application that competes with or is derived from the Project.</p>
+      <p>2.3 The Recipient shall not file any patent, design or trade mark application that uses or claims any part of the Discloser’s Confidential Information.</p>
+
+      <h3>3. Exceptions</h3>
+      <p>Clause 2 does not apply to information that the Recipient can show by written records:</p>
+      <ol>
+        <li>is or becomes public other than through a breach of this Agreement;</li>
+        <li>was lawfully in its possession before disclosure, free of any duty of confidence;</li>
+        <li>is received from a third party entitled to disclose it without restriction; or</li>
+        <li>is independently developed by people with no access to the Confidential Information.</li>
+      </ol>
+
+      <h3>4. Required disclosure</h3>
+      <p>The Recipient may disclose Confidential Information where required by law, court order or a regulator. Where lawful, it shall first tell the Discloser promptly and disclose only what is legally required.</p>
+
+      <h3>5. Intellectual property</h3>
+      <p>5.1 All Confidential Information remains the property of the Discloser. No licence or other right in any patent, design, copyright, trade mark, know-how or other intellectual property is granted or implied, except the limited right to use the information for the Purpose.</p>
+      <p>5.2 Any improvement, invention or feedback that the Recipient makes using the Discloser’s Confidential Information shall be disclosed to the Discloser and shall belong to the Discloser, unless the Parties agree otherwise in writing.</p>
+
+      <h3>6. Non-solicitation and non-circumvention</h3>
+      <p>For the term of this Agreement and 12 months after it ends, the Recipient shall not use the Confidential Information to approach, deal with or circumvent the Discloser’s suppliers, manufacturers, clinical partners or investors in connection with products similar to the Project.</p>
+
+      <h3>7. Return and destruction</h3>
+      <p>On the Discloser’s written request, or when the Purpose ends, the Recipient shall promptly return or destroy all Confidential Information and confirm this in writing. It may keep copies required by law or held in routine back-ups, which stay confidential.</p>
+
+      <h3>8. No obligation and no warranty</h3>
+      <p>Neither Party must disclose any information or enter into any further agreement. Confidential Information is provided “as is” without warranty of accuracy or fitness. Nothing here creates a partnership, agency or joint venture.</p>
+
+      <h3>9. Remedies</h3>
+      <p>Damages alone may not be an adequate remedy for breach. Each Party may seek an injunction, specific performance or other equitable relief, in addition to any other remedy.</p>
+
+      <h3>10. Term</h3>
+      <p>This Agreement starts on its date and lasts two (2) years. The confidentiality and use obligations survive for five (5) years after it ends, and for trade secrets for as long as the information remains a trade secret.</p>
+
+      <h3>11. General</h3>
+      <p>11.1 This Agreement is the entire agreement between the Parties on its subject and replaces earlier discussions.</p>
+      <p>11.2 A change is valid only if in writing and signed by both Parties. A failure or delay in enforcing a right is not a waiver.</p>
+      <p>11.3 Neither Party may assign this Agreement without the other’s written consent, except that Seven Eight Medical may assign it to a group company or to a successor of the Project.</p>
+      <p>11.4 If any provision is invalid, the rest remains in force.</p>
+      <p>11.5 No third party has rights under the Contracts (Rights of Third Parties) Act 1999.</p>
+      <p>11.6 This Agreement may be signed in counterparts and by electronic signature.</p>
+      <p>11.7 Notices must be in writing and sent to the addresses above or by email to hello@seveneightmedical.com (Seven Eight Medical) and <span class="fill" data-v="em"></span> (the Counterparty).</p>
+
+      <h3>12. Governing law and jurisdiction</h3>
+      <p>This Agreement and any dispute arising from it are governed by the law of England and Wales. The courts of England and Wales have exclusive jurisdiction.</p>
+
+      <h3>Signatures</h3>
+      <div class="sig">
+        <div class="sigbox">
+          <h4>For and on behalf of the Counterparty</h4>
+          <div class="sigline" data-v="sg"></div>
+          <p class="sigmeta">Name: <span data-v="nm"></span><br>Title: <span data-v="ttl"></span><br>Date: <span data-v="dt"></span></p>
+        </div>
+        <div class="sigbox">
+          <h4>For and on behalf of Seven Eight Asset Limited (trading as Seven Eight Medical)</h4>
+          <div class="sigline"></div>
+          <p class="sigmeta">Name: Wesley William John Richards<br>Title: Director<br>Date: ____________________</p>
+        </div>
+      </div>
+      <p class="stamp" id="stamp">Not yet signed.</p>
+    </article>
+  </div>
+</div>
+
+<script>
+  const $ = id => document.getElementById(id);
+  const labels = { co:'[company name]', ctry:'[country]', num:'[company number]', addr:'[registered office]', em:'[email]', nm:'', ttl:'', sg:'', dt:'[date]' };
+  const fmtDate = v => { if (!v) return ''; const d = new Date(v + 'T00:00:00'); return d.toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' }); };
+  try { $('dt').value = new Date().toISOString().slice(0,10); } catch (e) {}
+  function render() {
+    document.querySelectorAll('[data-v]').forEach(el => {
+      const k = el.dataset.v; let v = ($(k) && $(k).value || '').trim();
+      if (k === 'dt') v = fmtDate(v);
+      el.textContent = v || labels[k] || '';
+      el.classList.toggle('empty', !v && el.classList.contains('fill'));
+    });
+    const ready = isReady();
+    $('stamp').textContent = ready
+      ? 'Signed electronically by ' + $('nm').value.trim() + ' (' + $('ttl').value.trim() + ') for ' + $('co').value.trim() + ' on ' + fmtDate($('dt').value) + ', by typing their name and confirming authority.'
+      : 'Not yet signed.';
+    const body = 'Please find our signed mutual NDA attached.%0D%0A%0D%0ACompany: ' + encodeURIComponent($('co').value.trim()) + '%0D%0ASignatory: ' + encodeURIComponent($('nm').value.trim() + ', ' + $('ttl').value.trim()) + '%0D%0ADate: ' + encodeURIComponent(fmtDate($('dt').value));
+    $('mail').href = 'mailto:hello@seveneightmedical.com?subject=' + encodeURIComponent('Signed mutual NDA — ' + ($('co').value.trim() || 'Counterparty')) + '&body=' + body;
+  }
+  function isReady() {
+    const req = ['co','ctry','num','addr','em','nm','ttl','dt','sg'];
+    return req.every(k => $(k).value.trim()) && $('ok').checked;
+  }
+  document.querySelectorAll('#f input').forEach(i => i.addEventListener('input', render));
+  $('ok').addEventListener('change', render);
+  $('save').addEventListener('click', () => {
+    if (!isReady()) { $('msg').textContent = 'Please complete every field, type your name as signature and tick the confirmation.'; return; }
+    if ($('sg').value.trim().toLowerCase() !== $('nm').value.trim().toLowerCase()) { $('msg').textContent = 'Your typed signature should match the signatory name.'; return; }
+    $('msg').textContent = '';
+    try { window.print(); } catch (e) { $('msg').textContent = 'Use your browser’s Print menu and choose Save as PDF.'; }
+  });
+  render();
+</script>
+</body>
+</html>
