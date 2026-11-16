@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The evidence | Seven Eight Medical</title>
+<meta name="description" content="Published research and official guidance on noise and hearing in operating theatres.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#0B1416; --ink2:#121F22; --paper:#F5F6F4; --paper2:#E9EEEC; --teal:#2BB3A3; --teal-ink:#137066; --mist:#A9C1BD; --soft:#56625F; --line:#D5DEDB; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: Inter, -apple-system, "Segoe UI", Arial, sans-serif; color: var(--ink); background: var(--paper); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  nav { background: var(--ink); color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; }
+  .logo { font-weight: 600; letter-spacing: .32em; font-size: 13px; text-transform: uppercase; display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
+  .logo-mark { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--teal); position: relative; }
+  .logo-mark::after { content: ""; position: absolute; inset: 5px; border-radius: 50%; background: var(--teal); }
+  nav .links { display: flex; gap: 28px; font-size: 14px; }
+  nav .links a { color: #A9C1BD; text-decoration: none; }
+  nav .links a:hover { color: #fff; }
+
+  .hero { background: radial-gradient(ellipse at 50% 80%, #17312F 0%, var(--ink) 65%); color: #fff; text-align: center; padding: 120px 24px 110px; }
+  .eyebrow { font-size: 13px; letter-spacing: .28em; text-transform: uppercase; color: var(--teal); font-weight: 600; }
+  .hero h1 { font-size: clamp(44px, 7vw, 96px); letter-spacing: -0.045em; line-height: 1; margin: 18px 0 22px; }
+  .hero p { font-size: clamp(18px, 2vw, 22px); color: var(--mist); max-width: 720px; margin: 0 auto; line-height: 1.5; font-weight: 300; }
+
+  section { padding: 110px 24px; }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  .alt { background: var(--paper2); }
+  .dark { background: var(--ink); color: #fff; }
+  h2 { font-size: clamp(32px, 4.5vw, 56px); letter-spacing: -0.04em; line-height: 1.05; margin-top: 12px; }
+  .lede { font-size: 19px; color: var(--soft); line-height: 1.6; max-width: 760px; margin-top: 18px; }
+  .dark .lede { color: var(--mist); }
+  .dark .eyebrow { color: var(--teal); }
+  .eyebrow.ink { color: var(--teal-ink); }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 56px; }
+  .stat { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 30px 26px; }
+  .stat .n { font-size: clamp(40px, 4.4vw, 60px); font-weight: 700; letter-spacing: -0.05em; color: var(--teal-ink); line-height: 1; }
+  .stat p { color: var(--soft); font-size: 15px; line-height: 1.5; margin-top: 12px; }
+  .stat .src { font-size: 12px; color: #7B8784; margin-top: 12px; }
+  .stat .src a { color: var(--teal-ink); }
+
+  .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 52px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 32px; }
+  .dark .card { background: var(--ink2); border-color: #23393B; }
+  .card .who { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; color: var(--teal-ink); }
+  .dark .card .who { color: var(--teal); }
+  .card h3 { font-size: 22px; letter-spacing: -0.02em; margin: 10px 0 10px; line-height: 1.25; }
+  .card p { color: var(--soft); font-size: 15.5px; line-height: 1.6; }
+  .dark .card p { color: var(--mist); }
+  .card a.ref { display: inline-block; margin-top: 14px; font-size: 13px; color: var(--teal-ink); font-weight: 600; text-decoration: none; }
+  .dark .card a.ref { color: var(--teal); }
+
+  .note { margin-top: 40px; background: #fff; border-left: 4px solid var(--teal-ink); border-radius: 12px; padding: 22px 26px; color: var(--soft); font-size: 15.5px; line-height: 1.6; }
+  .note b { color: var(--ink); }
+
+  ol.refs { margin-top: 36px; padding-left: 22px; columns: 2; column-gap: 48px; }
+  ol.refs li { font-size: 14px; color: var(--soft); line-height: 1.55; margin-bottom: 12px; break-inside: avoid; }
+  ol.refs a { color: var(--teal-ink); }
+
+  .cta { text-align: center; }
+  .btn { display: inline-block; padding: 14px 28px; border-radius: 999px; font-size: 15px; font-weight: 600; text-decoration: none; margin: 8px 6px 0; }
+  .btn-teal { background: var(--teal); color: var(--ink); }
+  .btn-ghost { border: 1px solid rgba(255,255,255,.35); color: #fff; }
+
+  footer { background: var(--ink); color: #7F9894; padding: 40px 40px 56px; font-size: 13px; line-height: 1.7; border-top: 1px solid rgba(255,255,255,.07); }
+  footer .row { max-width: 1180px; margin: 0 auto; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  footer .legal { max-width: 1180px; margin: 16px auto 0; font-size: 12px; color: #627A76; }
+
+  @media (max-width: 900px) {
+    nav .links { display: none; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .cards { grid-template-columns: 1fr; }
+    ol.refs { columns: 1; }
+    section { padding: 80px 22px; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo"><span class="logo-mark"></span>Seven Eight Medical</a>
+  <div class="links">
+    <a href="index.html#products">Products</a>
+    <a href="evidence.html">Evidence</a>
+    <a href="index.html#story">Founder</a>
+    <a href="index.html#contact">Get involved</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow">The evidence</p>
+  <h1>The need is in<br>the research.</h1>
+  <p>Peer-reviewed studies, government health agencies and the surgeons’ own professional bodies all point the same way: theatres can be loud enough to damage hearing, and noise gets in the way of clear communication.</p>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow ink">At a glance</p>
+    <h2>Four numbers that frame the problem.</h2>
+    <div class="stats">
+      <div class="stat"><div class="n">51%</div><p>of orthopaedic staff tested across the studies in a 2023 systematic review had noise-induced hearing loss (28 of 55).</p><p class="src"><a href="https://boneandjoint.org.uk/doi/10.1302/0301-620X.105B6.BJJ-2022-0921.R1">Bone &amp; Joint Journal, 2023</a></p></div>
+      <div class="stat"><div class="n">3.6×</div><p>the odds of hearing loss for joint replacement surgeons compared with non-surgical clinicians (31% vs 11%).</p><p class="src"><a href="https://doi.org/10.1302/2633-1462.78.BJO-2025-0310.R1">Bone &amp; Joint Open</a></p></div>
+      <div class="stat"><div class="n">80%</div><p>of 225 operating theatre staff surveyed reported difficulty hearing during surgery.</p><p class="src"><a href="https://pubmed.ncbi.nlm.nih.gov/42059269/">Otolaryngology–Head and Neck Surgery, 2026</a></p></div>
+      <div class="stat"><div class="n">US$980bn</div><p>a year: the World Health Organization’s estimate of the global cost of unaddressed hearing loss.</p><p class="src"><a href="https://www.who.int/publications/i/item/9789240021570">WHO World Report on Hearing, 2021</a></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <p class="eyebrow">What the authorities say</p>
+    <h2>Regulators and professional bodies agree.</h2>
+    <p class="lede">The law on workplace noise already applies to hospitals. Government health agencies and surgeons’ own organisations are now calling for action in theatre.</p>
+    <div class="cards">
+      <div class="card">
+        <p class="who">Health and Safety Executive (UK)</p>
+        <h3>Action at 80 dB, protection compulsory at 85 dB, a hard limit at 87 dB.</h3>
+        <p>Under the Control of Noise at Work Regulations 2005, employers must assess the risk once average daily exposure reaches 80 dB(A), make hearing protection compulsory at 85 dB(A), and never let exposure exceed 87 dB(A). There are also limits for sudden peaks of noise.</p>
+        <a class="ref" href="https://www.hse.gov.uk/noise/employers.htm">HSE: employers’ legal duties →</a>
+      </div>
+      <div class="card">
+        <p class="who">NIOSH, US Centers for Disease Control</p>
+        <h3>Put orthopaedic surgeons on a hearing-loss prevention programme.</h3>
+        <p>After measuring noise during knee replacement surgery at a US hospital, the US government’s occupational health agency recommended annual hearing tests, training, quieter tools and hearing protection for surgeons.</p>
+        <a class="ref" href="https://stacks.cdc.gov/view/cdc/172394/cdc_172394_DS1.pdf">NIOSH Health Hazard Evaluation →</a>
+      </div>
+      <div class="card">
+        <p class="who">American Academy of Orthopaedic Surgeons</p>
+        <h3>Noise in the orthopaedic theatre can cause cumulative hearing loss.</h3>
+        <p>In October 2026 the AAOS warned that orthopaedic theatres often exceed workplace noise limits, that repeated exposure can add up to permanent hearing loss and tinnitus, and that the risk is still underrecognised.</p>
+        <a class="ref" href="https://www.aaos.org/aaosnow/2026/oct/managing/managing01/">AAOS Now, October 2026 →</a>
+      </div>
+      <div class="card">
+        <p class="who">World Health Organization</p>
+        <h3>Hearing loss is largely preventable.</h3>
+        <p>The WHO’s first World Report on Hearing projects that nearly 2.5 billion people will live with some hearing loss by 2050, and calls for prevention, including protection from loud noise at work.</p>
+        <a class="ref" href="https://www.who.int/news/item/02-03-2021-who-1-in-4-people-projected-to-have-hearing-problems-by-2050">WHO news release →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <p class="eyebrow ink">The research</p>
+    <h2>Staff, communication and patients.</h2>
+    <div class="cards">
+      <div class="card">
+        <p class="who">Theatre staff</p>
+        <h3>The warning has been in the journals since 1991.</h3>
+        <p>A UK study in the Journal of Bone and Joint Surgery measured powered orthopaedic tools above recommended levels, then tested 27 senior orthopaedic staff: half showed signs of noise-induced hearing loss. The authors called for ear defenders and quieter instruments.</p>
+        <a class="ref" href="https://pubmed.ncbi.nlm.nih.gov/1991742/">J Bone Joint Surg Br, 1991 →</a>
+      </div>
+      <div class="card">
+        <p class="who">Communication</p>
+        <h3>Noise makes it harder for surgeons to understand speech.</h3>
+        <p>A study in the Journal of the American College of Surgeons tested surgeons’ word recognition and found that background noise in theatre measurably reduces how well they understand what is said to them.</p>
+        <a class="ref" href="http://www.journalacs.org/article/S1072-7515%2813%2900044-6/abstract">J Am Coll Surg, 2013 →</a>
+      </div>
+      <div class="card">
+        <p class="who">Awake patients</p>
+        <h3>Music lowers anxiety and pain around surgery.</h3>
+        <p>A meta-analysis of 92 randomised controlled trials in the British Journal of Surgery found that music before, during or after surgery reduces patients’ anxiety and pain.</p>
+        <a class="ref" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6175460">Br J Surg, 2018 →</a>
+      </div>
+      <div class="card">
+        <p class="who">Patients and power tools</p>
+        <h3>Protect patients’ hearing too, especially older patients.</h3>
+        <p>Measuring noise from powered tools in orthopaedic theatres, researchers concluded that patients, particularly the elderly, should have hearing protection during these operations.</p>
+        <a class="ref" href="https://www.ovid.com/journals/ijcpr/fulltext/00066764-200811000-00015~exposure-to-noise-in-orthopaedic-theatres-do-we-need">Int J Clin Pract, 2008 →</a>
+      </div>
+    </div>
+    <div class="note"><b>What works.</b> A 2026 systematic review, reported by the AAOS, found that hearing protection with filters that let speech through reduced noise exposure while keeping theatre communication intact. Surgical hood systems helped little, and noise-cancelling headphones gave mixed results.</div>
+    <div class="note"><b>The balanced view.</b> Not every study finds harm. A small UK study of 18 orthopaedic staff found only minimal, temporary hearing changes after a working day (<a href="https://pubmed.ncbi.nlm.nih.gov/15285856/">J Laryngol Otol, 2004</a>). The risk comes mainly from short, very loud bursts of noise that add up over a career, which is why measuring exposure matters as much as protection.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow ink">References</p>
+    <h2>Read the sources.</h2>
+    <ol class="refs">
+      <li>The relationship between exposure to noise and hearing loss in orthopaedics: a systematic review. <a href="https://boneandjoint.org.uk/doi/10.1302/0301-620X.105B6.BJJ-2022-0921.R1">Bone &amp; Joint Journal, 2023</a>.</li>
+      <li>Noise-induced hearing loss in orthopaedic staff. <a href="https://pubmed.ncbi.nlm.nih.gov/1991742/">Journal of Bone and Joint Surgery (Br), 1991</a>.</li>
+      <li>Occupational hazards in hip and knee adult reconstruction surgery: a systematic review. <a href="https://doi.org/10.1302/2633-1462.78.BJO-2025-0310.R1">Bone &amp; Joint Open</a>.</li>
+      <li>Noise, hearing, and communication in the operating room: a mixed-methods study. <a href="https://pubmed.ncbi.nlm.nih.gov/42059269/">Otolaryngology–Head and Neck Surgery, 2026</a>.</li>
+      <li>Health Hazard Evaluation: noise exposure during knee replacement surgery. <a href="https://stacks.cdc.gov/view/cdc/172394/cdc_172394_DS1.pdf">NIOSH, US Centers for Disease Control and Prevention</a>.</li>
+      <li>Employers’ responsibilities under the Control of Noise at Work Regulations 2005. <a href="https://www.hse.gov.uk/noise/employers.htm">Health and Safety Executive</a>.</li>
+      <li>Noise in the orthopaedic OR can cause cumulative hearing loss. <a href="https://www.aaos.org/aaosnow/2026/oct/managing/managing01/">AAOS Now, October 2026</a>.</li>
+      <li>World Report on Hearing: executive summary. <a href="https://www.who.int/publications/i/item/9789240021570">World Health Organization, 2021</a>.</li>
+      <li>Effect of noise on auditory processing in the operating room. <a href="http://www.journalacs.org/article/S1072-7515%2813%2900044-6/abstract">Journal of the American College of Surgeons, 2013</a>.</li>
+      <li>Meta-analysis of the effect of music on perioperative anxiety and pain. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6175460">British Journal of Surgery, 2018</a>.</li>
+      <li>Exposure to noise in orthopaedic theatres: do we need protection? <a href="https://www.ovid.com/journals/ijcpr/fulltext/00066764-200811000-00015~exposure-to-noise-in-orthopaedic-theatres-do-we-need">International Journal of Clinical Practice, 2008</a>.</li>
+      <li>Noise exposure in orthopaedic practice: potential health risk. <a href="https://pubmed.ncbi.nlm.nih.gov/15285856/">Journal of Laryngology &amp; Otology, 2004</a>.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="dark cta">
+  <div class="wrap">
+    <p class="eyebrow">Get involved</p>
+    <h2>Help us solve it.</h2>
+    <p class="lede" style="margin-left:auto;margin-right:auto;">We’re talking to hospitals, theatre teams and partners who want to act on this evidence.</p>
+    <a class="btn btn-teal" href="mailto:hello@seveneightmedical.com?subject=Seven%20Eight%20Medical%3A%20register%20interest">Register interest</a>
+    <a class="btn btn-ghost" href="nda.html">Sign our NDA</a>
+  </div>
+</section>
+
+<footer>
+  <div class="row">
+    <span class="logo"><span class="logo-mark"></span>Seven Eight Medical</span>
+    <span>hello@seveneightmedical.com · United Kingdom</span>
+    <span>© 2026 Seven Eight Medical</span>
+  </div>
+  <p class="legal">Seven Eight Medical is a trading name of Seven Eight Asset Limited, registered in England and Wales, company number 06725808. Registered office: Berkstead, Winkfield Lane, Winkfield, Windsor, Berkshire SL4 4QU.</p>
+  <p class="legal">This page summarises published research and official guidance on noise in operating theatres. It does not describe our products, which are concepts in development and are not medical devices. No clinical benefit or regulatory approval is claimed.</p>
+</footer>
+</body>
+</html>
